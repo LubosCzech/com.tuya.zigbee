@@ -1,0 +1,55 @@
+{
+  "name": {
+    "en": "Dimmable SW"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "opts": {
+        "duration": true
+      }
+    },
+    "onoff": {
+      "setOnDim": false
+    }
+  },
+  "zigbee": {
+    "manufacturerName": "3A Smart Home DE",
+    "productId": [
+      "LXN56-DS27LX1.3"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/dimmable_transformer/assets/icon.svg",
+      "instruction": {
+        "en": "Use reset button."
+      }
+    }
+  },
+  "images": {
+    "large": "/drivers/dimmable_transformer/assets/images/large.png",
+    "small": "/drivers/dimmable_transformer/assets/images/small.png"
+  },
+  "settings": [
+
+  ]
+}

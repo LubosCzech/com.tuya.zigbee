@@ -1,14 +1,14 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
-  "id": "com.tuya.zigbee",
-  "version": "0.2.6",
+  "id": "cz.lcz.tuya",
+  "version": "0.1.0",
   "compatibility": ">=5.0.0",
   "platforms": [
     "local"
   ],
   "sdk": 3,
   "name": {
-    "en": "Tuya Zigbee"
+    "en": "LCZ Tuya Zigbee"
   },
   "description": {
     "en": "Control your white label Zigbee devices made by Tuya"
@@ -56,7 +56,7 @@
     "security",
     "appliances"
   ],
-  "brandColor": "#FF4800",
+  "brandColor": "#008cff",
   "permissions": [
     "homey:wireless:zigbee"
   ],
@@ -71,8 +71,8 @@
     "small": "/assets/images/small.png"
   },
   "author": {
-    "name": "Johan Bendz",
-    "email": "johan_bendz@hotmail.com"
+    "name": "Lubos Svetik",
+    "email": "lubos.svetik@gmail.com"
   },
   "contributing": {
     "donate": {
@@ -572,6 +572,90 @@
   },
   "drivers": [
     {
+      "id": "bseed_2_gang",
+      "name": {
+        "en": "2 Gang Bseed"
+      },
+      "class": "socket",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "/drivers/bseed_2_gang/assets/images/large.png",
+        "small": "/drivers/bseed_2_gang/assets/images/small.png"
+      },
+      "energy": {
+        "approximation": {
+          "usageOn": 0,
+          "usageOff": 0
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_ptjcjise"
+        ],
+        "productId": [
+          "TS0002"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              3,
+              4,
+              5,
+              6,
+              57344,
+              57345,
+              0
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              4,
+              5,
+              6,
+              57345
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        },
+        "devices": {
+          "rightSwitch": {
+            "capabilities": [
+              "onoff"
+            ],
+            "name": {
+              "en": "2 Gang Bseed - right"
+            },
+            "energy": {
+              "approximation": {
+                "usageOn": 0,
+                "usageOff": 0
+              }
+            }
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/bseed_2_gang/assets/icon.svg",
+          "instruction": {
+            "en": "A tile for each button will be created. Remove the front and press the setup button for 10 seconds (the LED should start blinking)."
+          }
+        }
+      },
+      "settings": []
+    },
+    {
       "id": "christmas_lights",
       "name": {
         "en": "Christmas Lights"
@@ -813,6 +897,60 @@
           ]
         }
       ]
+    },
+    {
+      "name": {
+        "en": "Dimmable SW"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
+      "zigbee": {
+        "manufacturerName": "3A Smart Home DE",
+        "productId": [
+          "LXN56-DS27LX1.3"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/dimmable_transformer/assets/icon.svg",
+          "instruction": {
+            "en": "Use reset button."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/dimmable_transformer/assets/images/large.png",
+        "small": "/drivers/dimmable_transformer/assets/images/small.png"
+      },
+      "settings": [],
+      "id": "dimmable_transformer"
     },
     {
       "id": "dimmer_1_gang",
@@ -1858,6 +1996,7 @@
           "_TZ3000_kmh5qpmb",
           "_TZ3000_msl6wxk9",
           "_TZ3000_mcxw5ehu"
+          "_TZ3000_msl6wxk9"
         ],
         "productId": [
           "TS0202"
@@ -2243,6 +2382,7 @@
           "_TZ3000_12sxjap4",
           "_TZ3000_hlijwsai",
           "_TZ3000_qd7hej8u"
+          "_TZ3000_hlijwsai"
         ],
         "productId": [
           "TS0505A",
@@ -2314,10 +2454,12 @@
         "manufacturerName": [
           "_TZ3000_gek6snaj",
           "_TZ3210_iystcadi"
+          "_TZ3000_gek6snaj"
         ],
         "productId": [
           "TS0505A",
           "TS0505B"
+          "TS0505A"
         ],
         "endpoints": {
           "1": {
@@ -3041,6 +3183,7 @@
         "meter_power",
         "measure_current",
         "measure_voltage"
+        "meter_power"
       ],
       "capabilitiesOptions": {
         "measure_power": {
@@ -3078,6 +3221,7 @@
           "_TZ3000_fqoynhku",
           "_TZ3000_ynmowqk2",
           "_TZ3000_kx0pris5"
+          "_TZ3000_5f43h46b"
         ],
         "productId": [
           "TS0121",
@@ -3781,6 +3925,7 @@
           "_TZ3000_rmjr4ufz",
           "_TZ3000_mx3vgyea",
           "_TZ3000_hhiodade"
+          "_TZ3000_mx3vgyea"
         ],
         "productId": [
           "TS0003",
@@ -3847,6 +3992,7 @@
           "_TZ3000_jl7qyupf",
           "_TZ3000_7ed9cqgi",
           "_TZ3000_18ejxno0"
+          "_TZ3000_llfaquvp"
         ],
         "productId": [
           "TS0003",
@@ -3859,6 +4005,7 @@
           "1": {
             "clusters": [
               0,
+              3,
               4,
               5,
               6
@@ -3945,6 +4092,7 @@
           "_TZ3000_i8jfiezr",
           "TUYATEC-v3uxbuxy",
           "_TZ3000_bguser20",
+          "_TZ3000_dowj6gyi",
           "_TZ3000_fllyghyj",
           "_TZ3000_8ybe88nf",
           "_TZ3000_fie1dpkm"
@@ -4905,6 +5053,10 @@
           "2": {
             "clusters": [
               6
+              4,
+              5,
+              6,
+              57345
             ],
             "bindings": [
               6

@@ -71,7 +71,7 @@
     "small": "/assets/images/small.png"
   },
   "author": {
-    "name": "Lubos Svetik",
+    "name": "LubosCzech",
     "email": "lubos.svetik@gmail.com"
   },
   "contributing": {
@@ -299,6 +299,61 @@
       }
     ],
     "triggers": [
+      {
+        "id": "moes_knob_buttons",
+        "title": {
+          "en": "Button Action"
+        },
+        "titleFormatted": {
+          "en": "The [[action]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=moes_knob"
+          },
+          {
+            "name": "action",
+            "type": "dropdown",
+            "title": {
+              "en": "Button Action"
+            },
+            "values": [
+              {
+                "id": "down-oneClick",
+                "label": {
+                  "en": "Button: 1 Click"
+                }
+              },
+              {
+                "id": "down-twoClicks",
+                "label": {
+                  "en": "Button: 2 Clicks"
+                }
+              },
+              {
+                "id": "down-longClick",
+                "label": {
+                  "en": "LongPress: 1 Click"
+                }
+              },
+              {
+                "id": "rotate-left",
+                "label": {
+                  "en": "Rotate to left"
+                }
+              },
+              {
+                "id": "rotate-right",
+                "label": {
+                  "en": "Rotate to right"
+                }
+              }
+            ]
+          }
+        ]
+      },
       {
         "id": "smart_remote_4_buttons",
         "title": {
@@ -1839,6 +1894,65 @@
       ]
     },
     {
+      "id": "moes_knob",
+      "name": {
+        "en": "Moes knob"
+      },
+      "class": "remote",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [
+        "dim"
+      ],
+      "images": {
+        "large": "/drivers/moes_knob/assets/images/large.png",
+        "small": "/drivers/moes_knob/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_qja6nq5z"
+        ],
+        "productId": [
+          "TS0044",
+          "TS004F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6,
+              8,
+              25,
+              10,
+              3,
+              4,
+              5
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/moes_knob/assets/icon.svg",
+          "instruction": {
+            "en": "Press the reset button for aprox 10 seconds (all LED should start blinking)."
+          }
+        }
+      },
+      "settings": []
+    },
+    {
       "id": "motion_sensor",
       "name": {
         "en": "Motion Sensor"
@@ -1994,8 +2108,7 @@
           "_TYZB01_dl7cejts",
           "_TZ3000_mmtwjmaq",
           "_TZ3000_kmh5qpmb",
-          "_TZ3000_msl6wxk9",
-          "_TZ3000_mcxw5ehu"
+          "_TZ3000_mcxw5ehu",
           "_TZ3000_msl6wxk9"
         ],
         "productId": [
@@ -2380,8 +2493,7 @@
           "_TZ3000_dbou1ap4",
           "_TZ3000_keabpigv",
           "_TZ3000_12sxjap4",
-          "_TZ3000_hlijwsai",
-          "_TZ3000_qd7hej8u"
+          "_TZ3000_qd7hej8u",
           "_TZ3000_hlijwsai"
         ],
         "productId": [
@@ -2452,13 +2564,11 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_gek6snaj",
-          "_TZ3210_iystcadi"
+          "_TZ3210_iystcadi",
           "_TZ3000_gek6snaj"
         ],
         "productId": [
-          "TS0505A",
-          "TS0505B"
+          "TS0505B",
           "TS0505A"
         ],
         "endpoints": {
@@ -3183,7 +3293,6 @@
         "meter_power",
         "measure_current",
         "measure_voltage"
-        "meter_power"
       ],
       "capabilitiesOptions": {
         "measure_power": {
@@ -3221,7 +3330,6 @@
           "_TZ3000_fqoynhku",
           "_TZ3000_ynmowqk2",
           "_TZ3000_kx0pris5"
-          "_TZ3000_5f43h46b"
         ],
         "productId": [
           "TS0121",
@@ -3923,8 +4031,7 @@
           "_TZ3000_npzfdcof",
           "_TZ3000_tqlv4ug4",
           "_TZ3000_rmjr4ufz",
-          "_TZ3000_mx3vgyea",
-          "_TZ3000_hhiodade"
+          "_TZ3000_hhiodade",
           "_TZ3000_mx3vgyea"
         ],
         "productId": [
@@ -3991,7 +4098,7 @@
           "_TZ3000_bvrlqyj7",
           "_TZ3000_jl7qyupf",
           "_TZ3000_7ed9cqgi",
-          "_TZ3000_18ejxno0"
+          "_TZ3000_18ejxno0",
           "_TZ3000_llfaquvp"
         ],
         "productId": [
@@ -5053,10 +5160,6 @@
           "2": {
             "clusters": [
               6
-              4,
-              5,
-              6,
-              57345
             ],
             "bindings": [
               6

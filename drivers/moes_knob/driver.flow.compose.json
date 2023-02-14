@@ -1,0 +1,48 @@
+{
+  "triggers": [
+    {
+      "id": "moes_knob_buttons",
+      "title": {"en": "Button Action"},
+      "titleFormatted": {"en": "The [[action]]"},
+      "args": [
+        {
+          "name": "action",
+          "type": "dropdown",
+          "title": {"en": "Button Action"},
+          "values": [
+            {
+              "id": "down-oneClick",
+              "label": {
+                "en": "Button: 1 Click"
+              }
+            },
+            {
+              "id": "down-twoClicks",
+              "label": {
+                "en": "Button: 2 Clicks"
+              }
+            },
+            {
+              "id": "down-longClick",
+              "label": {
+                "en": "LongPress: 1 Click"
+              }
+            },
+            {
+              "id": "rotate-left",
+              "label": {
+                "en": "Rotate to left"
+              }
+            },
+            {
+              "id": "rotate-right",
+              "label": {
+                "en": "Rotate to right"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
